@@ -3,4 +3,4 @@ __pycache__
 *.pyc
 .pytest_cache
 *.pyo
-__pycache__
+models/__pycache__
