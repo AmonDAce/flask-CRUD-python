@@ -18,15 +18,13 @@ def create_tasks():
     task_id_control += 1
     tasks.append(new_task)
     print(tasks)
-    return jsonify({"message": "Nova tarefa criada com sucesso!"}), 200
+    return jsonify({"message": "Nova tarefa criada com sucesso!", "id": new_task.id}), 200
 
 @app.route('/tasks', methods=['GET'])
 def get_tasks():
     task_list = [task.to_dict() for task in tasks]
-    # for task in tasks:
-    #     task_list.append(task.to_dict())
     output = {
-                "taks": task_list,
+                "tasks": task_list,
                 "total_tasks": len(task_list),
             }
     return jsonify(output), 200
